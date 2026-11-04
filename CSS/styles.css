@@ -2,6 +2,8 @@
 
 @layer base {
     html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
         color-scheme: light;
     }
 
@@ -19,11 +21,9 @@
     h4,
     h5,
     h6 {
-        font-family: var(--font-titulo);
+        font-family: var(--font-rotulo);
     }
 
-    a:focus,
-    button:focus,
     input:focus,
     select:focus,
     textarea:focus {
@@ -31,8 +31,31 @@
         outline-offset: 4px;
     }
 
+    a:focus,
+    button:focus {
+        outline: none;
+    }
+
     ::selection {
         background-color: var(--color-acento);
         color: var(--color-fondo);
+    }
+}
+
+@layer components {
+    .cabecera {
+        background-color: transparent;
+        color: var(--color-fondo);
+    }
+
+    .fondo-inicio {
+        min-height: 100vh;
+        background-image: url("../media/imagen-test.jpg");
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
