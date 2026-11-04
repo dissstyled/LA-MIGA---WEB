@@ -7,6 +7,10 @@
         color-scheme: light;
     }
 
+    body {
+        padding-top: 25vh;
+    }
+
     .dark {
         --color-fondo: #1e1916;
         --color-texto: #f5eee5;
@@ -37,7 +41,11 @@
     }
 
     ::selection {
-        background-color: var(--color-acento);
+        background-color: var(--color-secundario);
+        color: var(--color-texto);
+    }
+
+    .dark ::selection {
         color: var(--color-fondo);
     }
 }
@@ -46,6 +54,10 @@
     .cabecera {
         background-color: transparent;
         color: var(--color-fondo);
+    }
+
+    .contenido {
+        margin-top: calc(-6rem - 25vh);
     }
 
     .fondo-inicio {
