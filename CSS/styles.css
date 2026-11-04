@@ -1,0 +1,38 @@
+@layer theme, base, components, utilities;
+
+@layer base {
+    html {
+        color-scheme: light;
+    }
+
+    .dark {
+        --color-fondo: #1e1916;
+        --color-texto: #f5eee5;
+        --color-acento: #e0a477;
+
+        color-scheme: dark;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-titulo);
+    }
+
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 2px solid var(--color-acento);
+        outline-offset: 4px;
+    }
+
+    ::selection {
+        background-color: var(--color-acento);
+        color: var(--color-fondo);
+    }
+}

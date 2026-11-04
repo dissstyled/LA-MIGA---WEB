@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA MIGA</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-fondo: #faf7f2;
+            --color-texto: #2e241f;
+            --color-acento: #8c4f2e;
+
+            --font-titulo: "Fraunces", Georgia, serif;
+            --font-texto: "Work Sans", Arial, sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <!-- ================= CABECERA ================= -->
-     <header>
-        
-     </header>
-     <!-- ================= PORTADA ================= -->
-      <seciton>
-        
-      </seciton>
-    <!-- ================= PRODUCTOS ================= -->
-      <section>
+<body class="min-h-screen bg-fondo font-texto leading-relaxed text-texto antialiased">
+    <header>
+    </header>
 
-      </section>
-    <!-- ================= PREGUNTAS FRECUENTES ================= -->
-      <section>
+    <main>
+        <section id="inicio">
+        </section>
 
-      </section>
-   <!-- ================= MAS INFORAMCION ================= -->
-      <section>
+        <section id="productos">
+        </section>
 
-      </section>
-   <!-- ================= FOOTER ================= -->
-      <section>
+        <section id="preguntas">
+        </section>
 
-      </section>
+        <section id="visitanos">
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="JS/script.js"></script>
 </body>
+</html>
