@@ -3,7 +3,7 @@
 @layer base {
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 6rem;
+        scroll-padding-top: 7rem;
         color-scheme: light;
     }
 
@@ -41,6 +41,10 @@
         font-family: var(--font-rotulo);
     }
 
+    section > h2 {
+        text-align: center;
+    }
+
     input:focus,
     select:focus,
     textarea:focus {
@@ -70,7 +74,7 @@
     }
 
     .contenido {
-        margin-top: calc(-6rem - 20vh);
+        margin-top: calc(-7rem - 20vh);
     }
 
     .fondo-inicio {
@@ -112,4 +116,67 @@
     .menu {
         transition: none;
     }
+}
+
+.glightbox-producto .gslide-inner-content {
+    max-width: calc(100% - 2rem);
+}
+
+.glightbox-producto .gslide-inline {
+    max-height: calc(100vh - 2rem);
+    background-color: var(--color-fondo);
+    border-radius: 0;
+}
+
+.glightbox-producto .gslide-inline .ginlined-content {
+    padding: 0;
+    overflow: visible;
+}
+
+.glightbox-producto .ficha-producto {
+    user-select: text;
+}
+
+.glightbox-producto .goverlay {
+    background-color: var(--color-texto);
+    opacity: 0.4;
+}
+
+.dark .glightbox-producto .goverlay {
+    background-color: var(--color-fondo);
+}
+
+.glightbox-producto .imagen-producto {
+    aspect-ratio: 20 / 21;
+    overflow: hidden;
+}
+
+.glightbox-producto .cierre-producto {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    height: 0;
+}
+
+.glightbox-producto .gclose {
+    position: static;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.dark .glightbox-producto .gclose {
+    color: var(--color-fondo);
+}
+
+.glightbox-producto .gloader {
+    border-color: var(--color-acento);
+    border-right-color: transparent;
+    border-radius: 0;
 }

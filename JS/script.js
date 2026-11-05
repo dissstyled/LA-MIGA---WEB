@@ -134,6 +134,72 @@ $(function () {
         }
     });
 
+    const ventanaProducto = GLightbox({
+        selector: null,
+        skin: 'producto',
+        width: '600px',
+        height: 'auto',
+        preload: false,
+        closeOnOutsideClick: false,
+        touchNavigation: false,
+        draggable: false,
+        openEffect: 'none',
+        closeEffect: 'none',
+        svg: {
+            close: '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+        }
+    });
+
+    let productoActivo = null;
+
+    $('.abrir-producto').on('click', function (evento) {
+        evento.preventDefault();
+        productoActivo = $(this);
+
+        const ficha = $('#plantilla-producto .ficha-producto').clone();
+        const titulo = productoActivo.find('h3').text();
+
+        ficha.find('img').attr({
+            src: productoActivo.attr('href'),
+            alt: titulo,
+            loading: 'eager'
+        });
+        ficha.find('h2').text(titulo).attr('id', 'titulo-ficha-producto');
+        ficha.find('.precio-producto').text(productoActivo.find('p').last().text());
+        ficha.find('.descripcion-producto').text(productoActivo.attr('data-descripcion'));
+
+        ventanaProducto.setElements([{
+            content: ficha[0],
+            type: 'inline',
+            width: '600px',
+            height: 'auto'
+        }]);
+        ventanaProducto.open();
+    });
+
+    ventanaProducto.on('open', function () {
+        $('.glightbox-producto').attr({
+            role: 'dialog',
+            'aria-modal': 'true',
+            'aria-labelledby': 'titulo-ficha-producto'
+        });
+        $('.glightbox-producto .gclose')
+            .appendTo('.glightbox-producto .cierre-producto')
+            .attr('aria-label', 'Cerrar ficha de producto')
+            .trigger('focus');
+        $('.glightbox-producto').on('click', function (evento) {
+            if ($(evento.target).closest('.gslide-inline, .gclose').length === 0) {
+                ventanaProducto.close();
+            }
+        });
+    });
+
+    ventanaProducto.on('close', function () {
+        if (productoActivo) {
+            productoActivo.trigger('focus');
+        }
+    });
+
     $(window).on('load resize', colocarCabecera);
     $(window).on('scroll', actualizarCabecera);
 
