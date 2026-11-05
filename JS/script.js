@@ -9,13 +9,45 @@ $(function () {
     const inicio = $('#inicio');
     const contenido = $('.contenido');
     const contenidoInicio = $('.contenido-inicio');
+    const botonMenu = $('#boton-menu');
+    const menu = $('#menu');
+
+    function abrirMenu() {
+        menu.addClass('menu-abierto').attr('aria-hidden', 'false');
+        botonMenu.attr('aria-expanded', 'true');
+        $('body').addClass('menu-activo');
+        menu.find('a').first().trigger('focus');
+    }
+
+    function cerrarMenu() {
+        if (menu.hasClass('menu-abierto') && window.innerWidth < 768) {
+            botonMenu.trigger('focus');
+        }
+
+        menu.removeClass('menu-abierto');
+        botonMenu.attr('aria-expanded', 'false');
+        $('body').removeClass('menu-activo');
+
+        if (window.innerWidth < 768) {
+            menu.attr('aria-hidden', 'true');
+        } else {
+            menu.removeAttr('aria-hidden');
+        }
+    }
+
 
     function colocarCabecera() {
+        cerrarMenu();
+
         const altoPantalla = $(window).height();
         const altoCabecera = cabecera.outerHeight();
         const altoContenido = contenidoInicio.outerHeight();
         const espacioDisponible = (altoPantalla - altoContenido) / 2 - altoCabecera - 16;
-        const separacionMenu = Math.max(0, Math.min(altoPantalla * 0.25, espacioDisponible));
+        let separacionMenu = 0;
+
+        if (window.innerWidth >= 768) {
+            separacionMenu = Math.max(0, Math.min(altoPantalla * 0.20, espacioDisponible));
+        }
 
         $('body').css('paddingTop', separacionMenu + 'px');
         contenido.css('marginTop', -(altoCabecera + separacionMenu) + 'px');
@@ -66,6 +98,41 @@ $(function () {
             color: 'rgb(' + canalesEnlaces.join(', ') + ')'
         });
     }
+
+    botonMenu.on('click', function () {
+        if (menu.hasClass('menu-abierto')) {
+            cerrarMenu();
+        } else {
+            abrirMenu();
+        }
+    });
+
+    $('#cerrar-menu').on('click', cerrarMenu);
+    menu.find('a').on('click', cerrarMenu);
+
+    $(document).on('keydown', function (evento) {
+        if (!menu.hasClass('menu-abierto') || window.innerWidth >= 768) {
+            return;
+        }
+
+        if (evento.key === 'Escape') {
+            cerrarMenu();
+        }
+
+        if (evento.key === 'Tab') {
+            const controles = menu.find('a, button');
+            const primero = controles.first();
+            const ultimo = controles.last();
+
+            if (evento.shiftKey && document.activeElement === primero[0]) {
+                evento.preventDefault();
+                ultimo.trigger('focus');
+            } else if (!evento.shiftKey && document.activeElement === ultimo[0]) {
+                evento.preventDefault();
+                primero.trigger('focus');
+            }
+        }
+    });
 
     $(window).on('load resize', colocarCabecera);
     $(window).on('scroll', actualizarCabecera);

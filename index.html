@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="CSS/styles.css?v=9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="CSS/styles.css?v=12">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -20,8 +21,7 @@
         @theme static {
             --color-fondo: #FAF9F5;
             --color-texto: #20201E;
-            --color-acento: #8B3048;
-            --color-secundario: #F0CC5E;
+            --color-acento: #F0CC5E;
 
             --font-rotulo: "Bitter", Georgia, serif;
             --font-texto: "Work Sans", Arial, sans-serif;
@@ -29,16 +29,24 @@
     </style>
 </head>
 <body class="min-h-screen bg-fondo font-texto leading-relaxed text-texto antialiased">
-    <header class="cabecera sticky top-0 z-20 h-24">
-        <div class="mx-auto flex h-full max-w-5xl flex-col items-center justify-start gap-2 px-5 pb-1 pt-6">
-            <a href="#inicio" aria-label="LA MIGA, inicio">
+    <header class="cabecera sticky top-0 z-20 h-16 md:h-24">
+        <div class="mx-auto flex h-full max-w-5xl items-center justify-end gap-2 pl-5 md:flex-col md:justify-start md:px-5 md:pb-1 md:pt-6">
+            <a href="#inicio" aria-label="LA MIGA, inicio" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0">
                 <img src="media/LOGO-La_Miga-NEGRO.svg" alt="LA MIGA" width="366" height="71" class="block h-auto w-36">
             </a>
-            <nav aria-label="Principal">
-                <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-rotulo text-xs font-normal">
+            <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" class="flex h-16 w-16 shrink-0 items-center justify-center bg-acento text-3xl text-texto dark:text-fondo md:hidden">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="absolute md:static" aria-label="Principal">
+                <ul id="menu" class="menu flex flex-col items-center justify-center gap-6 px-5 py-20 font-rotulo text-2xl font-normal md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-2 md:p-0 md:text-xs">
                     <li><a href="#productos" class="block py-2 hover:text-acento focus:text-acento">Productos</a></li>
                     <li><a href="#preguntas" class="block py-2 hover:text-acento focus:text-acento">Preguntas frecuentes</a></li>
                     <li><a href="#visitanos" class="block py-2 hover:text-acento focus:text-acento">Visitanos</a></li>
+                    <li class="absolute right-0 top-0 md:hidden">
+                        <button id="cerrar-menu" type="button" aria-label="Cerrar menú" class="flex h-16 w-16 items-center justify-center bg-acento text-3xl text-texto dark:text-fondo">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -47,9 +55,9 @@
     <main class="contenido">
         <section id="inicio" class="fondo-inicio flex items-center justify-center bg-cover bg-center text-center">
             <div class="contenido-inicio mx-auto w-full max-w-5xl px-5">
-                <h1 class="font-rotulo text-4xl font-medium text-fondo md:text-6xl">Panadería y pastelería en Sanchinarro</h1>
+                <h1 class="font-rotulo text-2xl font-medium text-fondo md:text-5xl">Panadería y pastelería en Sanchinarro</h1>
                 <p class="mt-4 text-base text-fondo md:text-lg">Te esperamos en la calle Arroyo de los Pos, 3.</p>
-                <a href="#productos" class="mt-8 inline-block bg-secundario px-6 py-3 font-texto font-semibold text-texto dark:text-fondo">
+                <a href="#productos" class="mt-8 inline-block bg-acento px-6 py-3 font-texto font-semibold text-texto dark:text-fondo transition-colors hover:bg-fondo dark:hover:text-texto">
                     Échale un vistazo a nuestros productos
                 </a>
             </div>
@@ -71,6 +79,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="JS/script.js?v=4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+    <script src="JS/script.js?v=6"></script>
 </body>
 </html>
