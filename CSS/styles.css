@@ -2,13 +2,32 @@
 
 @layer base {
     html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 7rem;
         color-scheme: light;
+    }
+
+    body {
+        padding-top: 20vh;
+    }
+
+    @media (max-width: 767px) {
+        html {
+            scroll-padding-top: 4rem;
+        }
+
+        body {
+            padding-top: 0;
+        }
+
+        .menu-activo {
+            overflow: hidden;
+        }
     }
 
     .dark {
         --color-fondo: #1e1916;
         --color-texto: #f5eee5;
-        --color-acento: #e0a477;
 
         color-scheme: dark;
     }
@@ -19,11 +38,13 @@
     h4,
     h5,
     h6 {
-        font-family: var(--font-titulo);
+        font-family: var(--font-rotulo);
     }
 
-    a:focus,
-    button:focus,
+    section > h2 {
+        text-align: center;
+    }
+
     input:focus,
     select:focus,
     textarea:focus {
@@ -31,8 +52,131 @@
         outline-offset: 4px;
     }
 
+    a:focus,
+    button:focus {
+        outline: none;
+    }
+
     ::selection {
         background-color: var(--color-acento);
+        color: var(--color-texto);
+    }
+
+    .dark ::selection {
         color: var(--color-fondo);
     }
+}
+
+@layer components {
+    .cabecera {
+        background-color: transparent;
+        color: var(--color-fondo);
+    }
+
+    .contenido {
+        margin-top: calc(-7rem - 20vh);
+    }
+
+    .fondo-inicio {
+        min-height: 100vh;
+        background-image: url("../media/imagen-test.jpg");
+    }
+
+    @media (max-width: 767px) {
+        .contenido {
+            margin-top: -4rem;
+        }
+
+        .menu {
+            position: fixed;
+            z-index: 30;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            visibility: hidden;
+            transition: left 0.4s, visibility 0.4s;
+        }
+
+        .menu.menu-abierto {
+            left: 0;
+            visibility: visible;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .menu {
+        transition: none;
+    }
+}
+
+.glightbox-producto .gslide-inner-content {
+    max-width: calc(100% - 2rem);
+}
+
+.glightbox-producto .gslide-inline {
+    max-height: calc(100vh - 2rem);
+    background-color: var(--color-fondo);
+    border-radius: 0;
+}
+
+.glightbox-producto .gslide-inline .ginlined-content {
+    padding: 0;
+    overflow: visible;
+}
+
+.glightbox-producto .ficha-producto {
+    user-select: text;
+}
+
+.glightbox-producto .goverlay {
+    background-color: var(--color-texto);
+    opacity: 0.4;
+}
+
+.dark .glightbox-producto .goverlay {
+    background-color: var(--color-fondo);
+}
+
+.glightbox-producto .imagen-producto {
+    aspect-ratio: 20 / 21;
+    overflow: hidden;
+}
+
+.glightbox-producto .cierre-producto {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    height: 0;
+}
+
+.glightbox-producto .gclose {
+    position: static;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.dark .glightbox-producto .gclose {
+    color: var(--color-fondo);
+}
+
+.glightbox-producto .gloader {
+    border-color: var(--color-acento);
+    border-right-color: transparent;
+    border-radius: 0;
 }
