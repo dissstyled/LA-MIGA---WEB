@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LA MIGA</title>
 
+    <link rel="icon" type="image/x-icon" href="media/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="media/favicon/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
-    <link rel="stylesheet" href="CSS/styles.css?v=17">
+    <link rel="stylesheet" href="CSS/styles.css?v=20">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -20,6 +26,7 @@
 
         @theme static {
             --color-fondo: #FAF9F5;
+            --color-marfil: #FAF9F5;
             --color-texto: #20201E;
             --color-acento: #F0CC5E;
 
@@ -47,6 +54,11 @@
                             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                         </button>
                     </li>
+                    <li class="absolute bottom-6 left-1/2 -translate-x-1/2 md:bottom-auto md:left-4 md:top-6 md:translate-x-0">
+                        <button id="cambiar-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false" title="Activar modo oscuro" class="flex h-10 w-10 items-center justify-center bg-acento text-xl text-texto transition-colors hover:bg-texto hover:text-fondo focus:bg-texto focus:text-fondo dark:text-fondo">
+                            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -55,17 +67,19 @@
     <main class="contenido">
         <section id="inicio" class="fondo-inicio flex items-center justify-center bg-cover bg-center text-center">
             <div class="contenido-inicio mx-auto w-full max-w-5xl px-5">
-                <h1 class="font-rotulo text-2xl font-medium text-fondo md:text-5xl">Panadería y pastelería en Sanchinarro</h1>
-                <p class="mt-4 text-base text-fondo md:text-lg">Te esperamos en la calle Arroyo de los Pos, 3.</p>
-                <a href="#productos" class="mt-8 inline-block bg-acento px-6 py-3 font-texto font-semibold text-texto dark:text-fondo transition-colors hover:bg-fondo dark:hover:text-texto">
-                    Ver productos
-                </a>
+                <div class="entrada-inicio">
+                    <h1 class="font-rotulo text-2xl font-medium text-fondo dark:text-texto md:text-5xl">Panadería y pastelería en Sanchinarro</h1>
+                    <p class="mx-auto mt-4 w-4/5 text-base text-fondo dark:text-texto md:w-full md:text-lg">Te esperamos en la calle Arroyo de los Pos, 3.</p>
+                    <a href="#productos" class="mt-8 inline-block bg-acento px-6 py-3 font-texto font-semibold text-texto dark:text-fondo transition-colors hover:bg-fondo dark:hover:text-texto">
+                        Ver productos
+                    </a>
+                </div>
             </div>
         </section>
 
         <div class="mx-auto max-w-5xl px-5">
             <section id="productos" class="pb-12 pt-20 md:pb-16 md:pt-24">
-                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:text-fondo">Selección de productos</span></h2>
+                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:bg-marfil dark:text-fondo">Selección de productos</span></h2>
                 <div class="mt-12 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
                     <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
                         <a href="media/empanada_casera_completa.jpg" class="abrir-producto flex h-full flex-col" data-descripcion="Empanada rellena de rulo de queso de cabra y cebolla caramelizada. Combina la intensidad del queso con el toque dulce de la cebolla, envueltos en una masa que los clientes destacan por su textura. Una pieza entera para compartir en comidas, cenas o reuniones." aria-label="Ver ficha de Empanada casera">
@@ -151,7 +165,7 @@
             </section>
 
             <section id="preguntas" class="py-16 md:py-20">
-                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:text-fondo">Preguntas frecuentes</span></h2>
+                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:bg-marfil dark:text-fondo">Preguntas frecuentes</span></h2>
 
                 <div class="mt-10 divide-y divide-texto/20 border-y border-texto/20">
                     <div class="py-5">
@@ -202,7 +216,7 @@
             </section>
 
             <section id="visitanos" class="bg-texto/5 py-16 md:py-20">
-                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:text-fondo">Visítanos</span></h2>
+                <h2 class="font-rotulo text-3xl font-medium md:text-4xl"><span class="bg-acento text-texto dark:bg-marfil dark:text-fondo">Visítanos</span></h2>
                 <div class="text-center">
                     <h3 class="mt-6 font-rotulo text-2xl font-medium">¿Dónde estamos?</h3>
                     <p class="mt-3 text-texto/70">
@@ -210,21 +224,20 @@
                     </p>
                 </div>
                 <div class="mx-auto mt-8 max-w-md overflow-hidden border border-texto/20">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Horno+de+Pan+La+Miga%2C+Calle+del+Arroyo+de+los+Pos+3%2C+28050+Madrid" target="_blank" rel="noopener noreferrer" aria-label="Ver Horno de Pan La Miga en Google Maps"
-                        class="block">
-                        <iframe
-                            src="https://www.google.com/maps?q=Horno+de+Pan+La+Miga,+Calle+del+Arroyo+de+los+Pos+3,+28050+Madrid&output=embed"
-                            class="h-56 w-full pointer-events-none"
-                            loading="lazy"
-                            title="Ubicación de Horno de Pan La Miga en Sanchinarro"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </a>
+                    <iframe
+                        src="https://www.google.com/maps?q=Horno+de+Pan+La+Miga,+Calle+del+Arroyo+de+los+Pos+3,+28050+Madrid&output=embed"
+                        class="block h-56 w-full"
+                        loading="lazy"
+                        title="Ubicación de Horno de Pan La Miga en Sanchinarro"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
 
                 <p class="mt-4 text-center text-sm text-texto/70">
-                    <i class="fa-solid fa-location-dot mr-2 text-acento"></i>
-                    Horno de Pan La Miga · Sanchinarro, Madrid
+                    <a href="https://www.google.com/maps/search/?api=1&query=Horno+de+Pan+La+Miga%2C+Calle+del+Arroyo+de+los+Pos+3%2C+28050+Madrid" target="_blank" rel="noopener noreferrer" aria-label="Ver Horno de Pan La Miga en Google Maps" class="transition-colors hover:text-acento focus:text-acento">
+                        <i class="fa-solid fa-location-dot mr-2 text-acento" aria-hidden="true"></i>
+                        Horno de Pan La Miga · Sanchinarro, Madrid
+                    </a>
                 </p>
             </section>
         </div>
@@ -253,7 +266,7 @@
                     alt="LA MIGA"
                     width="366"
                     height="71"
-                    class="mx-auto w-56 max-w-full dark:invert md:w-72"
+                    class="mx-auto w-56 max-w-full md:w-72"
                 >
 
                 <p class="mt-4 font-rotulo text-xl font-medium md:text-2xl">
@@ -267,12 +280,12 @@
 
             <div class="grid grid-cols-1 gap-8 border-b border-texto/40 py-10 md:grid-cols-2 md:gap-12">
 
-                <div class="flex items-start gap-5 md:justify-center md:border-r md:border-texto/40 md:pr-8">
-                    <i class="fa-solid fa-phone mt-1 text-3xl text-texto dark:text-fondo md:text-4xl" aria-hidden="true"></i>
+                <div class="relative flex items-start gap-5 md:justify-center md:border-r md:border-texto/40 md:pr-8">
+                    <i class="absolute left-0 fa-solid fa-phone mt-1 text-3xl text-texto md:text-4xl md:static" aria-hidden="true"></i>
 
-                    <div>
+                    <div class="w-full text-center md:w-auto md:text-left">
                         <h3 class="font-rotulo text-xl font-medium md:text-2xl">
-                            <span class="bg-acento text-texto dark:text-fondo">CONTÁCTANOS</span>
+                            <span class="bg-acento text-texto dark:bg-marfil dark:text-fondo">CONTÁCTANOS</span>
                         </h3>
 
                         <a
@@ -284,12 +297,12 @@
                     </div>
                 </div>
 
-                <div class="flex items-start gap-5 md:justify-center md:pl-8">
-                    <i class="fa-regular fa-clock mt-1 text-3xl text-texto dark:text-fondo md:text-4xl" aria-hidden="true"></i>
+                <div class="relative flex items-start gap-5 md:justify-center md:pl-8">
+                    <i class="absolute left-0 fa-regular fa-clock mt-1 text-3xl text-texto md:text-4xl md:static" aria-hidden="true"></i>
 
-                    <div>
+                    <div class="w-full text-center md:w-auto md:text-left">
                         <h3 class="font-rotulo text-xl font-medium md:text-2xl">
-                            <span class="bg-acento text-texto dark:text-fondo">HORARIO</span>
+                            <span class="bg-acento text-texto dark:bg-marfil dark:text-fondo">HORARIO</span>
                         </h3>
 
                         <p class="mt-3 text-sm leading-relaxed md:text-base">
@@ -309,6 +322,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
-    <script src="JS/script.js?v=9"></script>
+    <script src="JS/script.js?v=10"></script>
 </body>
 </html>

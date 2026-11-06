@@ -68,18 +68,39 @@
 }
 
 @layer components {
+    .entrada-inicio {
+        animation: aparecer-inicio 0.7s ease-out both;
+    }
+
+    @keyframes aparecer-inicio {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .enlace-menu:hover span {
         background-color: var(--color-acento);
         color: var(--color-texto);
     }
 
     .dark .enlace-menu:hover span {
+        background-color: var(--color-marfil);
         color: var(--color-fondo);
     }
 
     .cabecera {
         background-color: transparent;
         color: var(--color-fondo);
+    }
+
+    .dark .cabecera {
+        color: var(--color-texto);
     }
 
     .contenido {
@@ -118,6 +139,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .entrada-inicio {
+        animation: none;
+    }
+
     html {
         scroll-behavior: auto;
     }
@@ -156,7 +181,7 @@
 }
 
 .glightbox-producto .imagen-producto {
-    aspect-ratio: 20 / 21;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 
