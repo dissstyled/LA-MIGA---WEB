@@ -68,6 +68,15 @@
 }
 
 @layer components {
+    .enlace-menu:hover span {
+        background-color: var(--color-acento);
+        color: var(--color-texto);
+    }
+
+    .dark .enlace-menu:hover span {
+        color: var(--color-fondo);
+    }
+
     .cabecera {
         background-color: transparent;
         color: var(--color-fondo);
