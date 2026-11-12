@@ -83,92 +83,232 @@
         </section>
 
         <div class="mx-auto max-w-5xl px-5">
-            <section id="productos" class="pb-12 pt-20 md:pb-16 md:pt-24">
-                <h2 class="font-pangaia text-6xl font-normal leading-[0.85] md:text-7xl">Seleccion de productos</h2>
-                <div class="mt-12 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/empanada_casera_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Empanada rellena de rulo de queso de cabra y cebolla caramelizada. Combina la intensidad del queso con el toque dulce de la cebolla, envueltos en una masa que los clientes destacan por su textura. Una pieza entera para compartir en comidas, cenas o reuniones." aria-label="Ver ficha de Empanada casera">
-                            <img src="media/empanada_casera_miniatura.webp" alt="Empanada casera" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Empanada casera</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Empanada salada de queso de cabra y cebolla caramelizada, con relleno cremoso y masa crujiente.</p>
-                                <p class="mt-auto pt-5 text-base">22,00 €</p>
+            
+
+            <section id="productos" class="pb-20 pt-20 md:pb-24 md:pt-24">
+
+                <h2 class="text-center font-pangaia text-5xl font-normal leading-tight md:text-7xl">
+                    Selección de productos
+                </h2>
+
+                <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
+
+                    <!-- PRODUCTO 1: EMPANADA -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/empanada_casera_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="Empanada rellena de rulo de queso de cabra y cebolla caramelizada. Combina la intensidad del queso con el toque dulce de la cebolla, envueltos en una masa que los clientes destacan por su textura. Una pieza entera para compartir en comidas, cenas o reuniones."
+                        aria-label="Ver ficha de Empanada casera">
+
+                            <img src="media/empanada_casera_miniatura.webp"
+                                alt="Empanada casera"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Empanada casera
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Empanada salada de queso de cabra y cebolla caramelizada, con relleno cremoso y masa crujiente.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    22,00 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/roscon_reyes_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="El clásico de Reyes, presentado en una pieza entera para cortar y compartir. Una opción dulce para disfrutar durante las fiestas, acompañada de café o chocolate caliente. Las referencias del establecimiento mencionan este producto, aunque no detallan su receta, decoración o variedades de relleno." aria-label="Ver ficha de Roscón de Reyes">
-                            <img src="media/roscon_reyes_miniatura.webp" alt="Roscón de Reyes" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Roscón de Reyes</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Roscón tradicional entero para compartir en los desayunos y meriendas de Navidad.</p>
-                                <p class="mt-auto pt-5 text-base">25,00 €</p>
+
+
+                    <!-- PRODUCTO 2: ROSCÓN -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/roscon_reyes_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="El clásico de Reyes, presentado en una pieza entera para cortar y compartir. Una opción dulce para disfrutar durante las fiestas, acompañada de café o chocolate caliente. Las referencias del establecimiento mencionan este producto, aunque no detallan su receta, decoración o variedades de relleno."
+                        aria-label="Ver ficha de Roscón de Reyes">
+
+                            <img src="media/roscon_reyes_miniatura.webp"
+                                alt="Roscón de Reyes"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Roscón de Reyes
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Roscón tradicional entero para compartir en los desayunos y meriendas de Navidad.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    25,00 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/pan_agua_natural_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Pan de harina de trigo, agua, levadura y sal, de corteza crujiente y miga ligera. Ideal para tostadas y bocadillos." aria-label="Ver ficha de Pan de agua natural">
-                            <img src="media/pan_agua_natural_miniatura.webp" alt="Pan de agua natural" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Pan de agua natural</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Pan alargado de aspecto rústico, con superficie enharinada.</p>
-                                <p class="mt-auto pt-5 text-base">1,30 €</p>
+
+
+                    <!-- PRODUCTO 3: PAN DE AGUA -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/pan_agua_natural_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="Pan de harina de trigo, agua, levadura y sal, de corteza crujiente y miga ligera. Ideal para tostadas y bocadillos."
+                        aria-label="Ver ficha de Pan de agua natural">
+
+                            <img src="media/pan_agua_natural_miniatura.webp"
+                                alt="Pan de agua natural"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Pan de agua natural
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Pan alargado de aspecto rústico, con superficie enharinada.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    1,30 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/hogaza_centeno_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Hogaza elaborada con harinas de centeno y trigo, agua, levadura y sal. De sabor característico y miga consistente, perfecta para servir en rebanadas." aria-label="Ver ficha de Hogaza de centeno">
-                            <img src="media/hogaza_centeno_miniatura.webp" alt="Hogaza de centeno" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Hogaza de centeno</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Hogaza de corteza oscura y acabado enharinado.</p>
-                                <p class="mt-auto pt-5 text-base">3,00 €</p>
+
+
+                    <!-- PRODUCTO 4: HOGAZA -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/hogaza_centeno_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="Hogaza elaborada con harinas de centeno y trigo, agua, levadura y sal. De sabor característico y miga consistente, perfecta para servir en rebanadas."
+                        aria-label="Ver ficha de Hogaza de centeno">
+
+                            <img src="media/hogaza_centeno_miniatura.webp"
+                                alt="Hogaza de centeno"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Hogaza de centeno
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Hogaza de corteza oscura y acabado enharinado.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    3,00 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/campera_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Barra rústica de harina de trigo, agua, levadura y sal. Su corteza dorada la convierte en una opción para acompañar comidas o preparar bocadillos." aria-label="Ver ficha de Campera">
-                            <img src="media/campera_miniatura.webp" alt="Campera" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Campera</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Barra rústica de corteza dorada y cortes superiores marcados.</p>
-                                <p class="mt-auto pt-5 text-base">2,65 €</p>
+
+
+                    <!-- PRODUCTO 5: CAMPERA -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/campera_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="Barra rústica de harina de trigo, agua, levadura y sal. Su corteza dorada la convierte en una opción para acompañar comidas o preparar bocadillos."
+                        aria-label="Ver ficha de Campera">
+
+                            <img src="media/campera_miniatura.webp"
+                                alt="Campera"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Campera
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Barra rústica de corteza dorada y cortes superiores marcados.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    2,65 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/pan_pueblo_750g_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Pan de harina de trigo, agua, levadura y sal, con acabado rústico y corteza enharinada. Una pieza de 750 gramos para cortar en rebanadas y compartir." aria-label="Ver ficha de Pan de pueblo, 750 g">
-                            <img src="media/pan_pueblo_750g_miniatura.webp" alt="Pan de pueblo, 750 g" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Pan de pueblo</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Pieza grande de formato alargado y acabado rústico.</p>
-                                <p class="mt-auto pt-5 text-base">3,00 €</p>
+
+
+                    <!-- PRODUCTO 6: PAN DE PUEBLO -->
+                    <article class="aspect-[3/4] overflow-hidden rounded-[40px] bg-[#F0E7D6] transition-transform duration-300 hover:-translate-y-1">
+                        <a href="media/pan_pueblo_750g_completa.webp" class="abrir-producto flex h-full flex-col"
+                        data-descripcion="Pan de harina de trigo, agua, levadura y sal, con acabado rústico y corteza enharinada. Una pieza de 750 gramos para cortar en rebanadas y compartir."
+                        aria-label="Ver ficha de Pan de pueblo">
+
+                            <img src="media/pan_pueblo_750g_miniatura.webp"
+                                alt="Pan de pueblo, 750 g"
+                                class="h-1/2 w-full object-cover"
+                                loading="lazy">
+
+                            <div class="flex min-h-0 flex-1 flex-col justify-center p-5">
+                                <h3 class="font-audemars text-xl md:text-2xl">
+                                    Pan de pueblo
+                                </h3>
+
+                                <p class="mt-2 font-pangaia text-sm leading-relaxed text-texto/80 md:text-base">
+                                    Pieza grande de formato alargado y acabado rústico.
+                                </p>
+
+                                <p class="mt-auto pt-4 font-texto text-sm">
+                                    3,00 €
+                                </p>
                             </div>
                         </a>
                     </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/barra_cereales_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Barra elaborada con una mezcla de harinas de cereales, agua, levadura, sal y semillas. Las semillas de la superficie aportan textura a cada bocado." aria-label="Ver ficha de Barra de cereales">
-                            <img src="media/barra_cereales_miniatura.webp" alt="Barra de cereales" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Barra de cereales</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Barra con semillas visibles en la superficie.</p>
-                                <p class="mt-auto pt-5 text-base">1,60 €</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="producto flex h-full flex-col overflow-hidden border border-texto/30 bg-fondo transition-opacity hover:opacity-70">
-                        <a href="media/pan_centeno_completa.webp" class="abrir-producto flex h-full flex-col" data-descripcion="Pan elaborado con harinas de centeno y trigo, agua, levadura y sal. Su sabor combina con quesos, embutidos y otros acompañamientos salados." aria-label="Ver ficha de Pan de centeno">
-                            <img src="media/pan_centeno_miniatura.webp" alt="Pan de centeno" width="640" height="640" loading="lazy" class="aspect-square w-full object-cover">
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="font-rotulo text-2xl font-normal"><span class="titulo-producto">Pan de centeno</span></h3>
-                                <p class="mt-3 text-sm leading-relaxed text-texto/80">Otra referencia de centeno del expositor; la etiqueta no especifica su peso.</p>
-                                <p class="mt-auto pt-5 text-base">1,05 €</p>
-                            </div>
-                        </a>
-                    </article>
+
                 </div>
-            </section>
+            </section>  
+
+
         </div>
+
+
+        <section class="w-full overflow-hidden bg-[#F0E7D6] py-3 md:py-4">
+
+            <div class="flex w-max animate-[marquesina_30s_linear_infinite]">
+
+                <div class="flex shrink-0 items-center gap-6 px-3 md:gap-10 md:px-5">
+
+                    <span class="font-audemars text-lg md:text-2xl">Empanada casera</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Roscón de Reyes</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Pan de agua natural</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Hogaza de centeno</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Campera</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Pan de pueblo</span>
+                    <span class="text-sm">✳</span>
+
+                </div>
+
+                <div class="flex shrink-0 items-center gap-6 px-3 md:gap-10 md:px-5" aria-hidden="true">
+
+                    <span class="font-audemars text-lg md:text-2xl">Empanada casera</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Roscón de Reyes</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Pan de agua natural</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Hogaza de centeno</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Campera</span>
+                    <span class="text-sm">✳</span>
+                    <span class="font-audemars text-lg md:text-2xl">Pan de pueblo</span>
+                    <span class="text-sm">✳</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
         <section id="preguntas" class="pb-16 lg:grid lg:grid-cols-2 lg:pb-0">
             <div class="mx-auto w-full max-w-5xl px-5 pb-8 pt-16 md:pt-20 lg:mx-0 lg:ml-auto lg:max-w-2xl lg:py-20 lg:pr-10">
