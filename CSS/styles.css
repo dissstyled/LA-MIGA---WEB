@@ -1,6 +1,14 @@
 @layer theme, base, components, utilities;
 
 @layer base {
+    @font-face {
+        font-family: "Tell us, Pangaia";
+        src: url("../media/fuentes/pangaia.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 7rem;
@@ -68,9 +76,55 @@
 }
 
 @layer components {
+    .entrada-inicio {
+        animation: aparecer-inicio 0.7s ease-out both;
+    }
+
+    @keyframes aparecer-inicio {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .titulo-producto,
+    .enlace-menu span {
+        background-image: linear-gradient(var(--color-acento), var(--color-acento));
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        transition: background-size 0.35s ease;
+    }
+
+    .dark .enlace-menu span {
+        background-image: linear-gradient(var(--color-marfil), var(--color-marfil));
+    }
+
+    @media (hover: hover) {
+        .producto:hover .titulo-producto,
+        .enlace-menu:hover span {
+            background-size: 100% 100%;
+            color: var(--color-texto);
+        }
+
+        .dark .producto:hover .titulo-producto,
+        .dark .enlace-menu:hover span {
+            color: var(--color-fondo);
+        }
+    }
+
     .cabecera {
         background-color: transparent;
         color: var(--color-fondo);
+    }
+
+    .dark .cabecera {
+        color: var(--color-texto);
     }
 
     .contenido {
@@ -79,10 +133,14 @@
 
     .fondo-inicio {
         min-height: 100vh;
-        background-image: url("../media/imagen-test.jpg");
+        background-image: url("../media/imagen-test.webp");
     }
 
     @media (max-width: 767px) {
+        .fondo-inicio {
+            background-image: url("../media/fondo-movil.webp");
+        }
+
         .contenido {
             margin-top: -4rem;
         }
@@ -109,6 +167,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .titulo-producto,
+    .enlace-menu span {
+        transition: none;
+    }
+
+    .entrada-inicio {
+        animation: none;
+    }
+
     html {
         scroll-behavior: auto;
     }
@@ -147,7 +214,7 @@
 }
 
 .glightbox-producto .imagen-producto {
-    aspect-ratio: 20 / 21;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 

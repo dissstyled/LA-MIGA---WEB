@@ -11,6 +11,21 @@ $(function () {
     const contenidoInicio = $('.contenido-inicio');
     const botonMenu = $('#boton-menu');
     const menu = $('#menu');
+    const botonTema = $('#cambiar-tema');
+
+    function actualizarTema() {
+        const oscuro = raiz.classList.contains('dark');
+        const nombre = oscuro ? 'Activar modo claro' : 'Activar modo oscuro';
+
+        botonTema.attr({
+            'aria-label': nombre,
+            'aria-pressed': oscuro ? 'true' : 'false',
+            title: nombre
+        });
+        botonTema.find('i').removeClass('fa-moon fa-sun').addClass(oscuro ? 'fa-sun' : 'fa-moon');
+
+        actualizarCabecera();
+    }
 
     function abrirMenu() {
         menu.addClass('menu-abierto').attr('aria-hidden', 'false');
@@ -88,8 +103,10 @@ $(function () {
             canalesTexto.push(parseInt(texto.substring(posicion, posicion + 2), 16));
         }
 
+        const canalesInicio = raiz.classList.contains('dark') ? canalesTexto : canalesFondo;
+
         for (let indice = 0; indice < 3; indice = indice + 1) {
-            const canal = canalesFondo[indice] + (canalesTexto[indice] - canalesFondo[indice]) * progreso;
+            const canal = canalesInicio[indice] + (canalesTexto[indice] - canalesInicio[indice]) * progreso;
             canalesEnlaces.push(Math.round(canal));
         }
 
@@ -98,6 +115,12 @@ $(function () {
             color: 'rgb(' + canalesEnlaces.join(', ') + ')'
         });
     }
+
+    botonTema.on('click', function () {
+        raiz.classList.toggle('dark');
+        localStorage.setItem('tema', raiz.classList.contains('dark') ? 'oscuro' : 'claro');
+        actualizarTema();
+    });
 
     botonMenu.on('click', function () {
         if (menu.hasClass('menu-abierto')) {
@@ -204,4 +227,5 @@ $(function () {
     $(window).on('scroll', actualizarCabecera);
 
     colocarCabecera();
+    actualizarTema();
 });
