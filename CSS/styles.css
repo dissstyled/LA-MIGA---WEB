@@ -1,24 +1,3 @@
-@keyframes marquesina {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-@media (max-width: 768px) {
-    .animate-marquee {
-        animation-duration: 25s;
-    }
-}
-
-@media (max-width: 480px) {
-    .animate-marquee {
-        animation-duration: 20s;
-    }
-}
-
 @layer theme, base, components, utilities;
 
 @layer base {
@@ -113,6 +92,33 @@
         }
     }
 
+    .marquesina {
+        animation: marquesina 30s linear infinite;
+    }
+
+    @keyframes marquesina {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .marquesina {
+            animation-duration: 25s;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .marquesina {
+            animation-duration: 20s;
+        }
+    }
+
+
     .titulo-producto,
     .enlace-menu span {
         background-image: linear-gradient(var(--color-acento), var(--color-acento));
@@ -125,6 +131,16 @@
     .dark .enlace-menu span {
         background-image: linear-gradient(var(--color-marfil), var(--color-marfil));
     }
+
+    .abrir-producto:focus-visible .titulo-producto {
+        background-size: 100% 100%;
+        color: var(--color-texto);
+    }
+
+    .dark .abrir-producto:focus-visible .titulo-producto {
+        color: var(--color-fondo);
+    }
+
 
     @media (hover: hover) {
         .producto:hover .titulo-producto,
@@ -193,8 +209,13 @@
         transition: none;
     }
 
-    .entrada-inicio {
+    .entrada-inicio,
+    .marquesina {
         animation: none;
+    }
+
+    .producto {
+        transition: none;
     }
 
     html {
